@@ -10,12 +10,18 @@
 
 class Matriz {
 private:
+	double **matriz;
 
 public:
 	Matriz();
-	Matriz(int linhas, int colunas, const double &valor = 0);
+	Matriz(int linhas, int colunas, const double &valor);
 	virtual ~Matriz();
 	Matriz(const Matriz &m);
+
+	double **  getMatriz();
+	int getRows();
+	int getCols();
+	void zeros();
 };
 
 #endif /* POO_TP2_MATRIZ_H_ */
