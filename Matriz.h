@@ -21,13 +21,13 @@ public:
 	virtual ~Matriz();
 	Matriz(const Matriz &m);
 
-	double **  getMatriz();
-	int getRows();
-	int getCols();
+	double **  getMatriz() const;
+	int getRows() const;
+	int getCols() const;
 	void zeros();
 
 	Matriz operator*(Matriz& m);
-	double& operator()(const int i, const int j) ;
+	double& operator()(const int i, const int j) const;
 
 	//Write the member variables to stream objects
 	friend std::ostream& operator << (std::ostream& out, const Matriz& obj);

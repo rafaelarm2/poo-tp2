@@ -18,6 +18,8 @@ int main(int argc, char **argv, char **envp) {
 	cout << endl << "Digite o valor da matriz: ";
 	cin >> *matriz;
 	cout << endl << *matriz;
+	cout << endl << (*matriz)(1, 1) << endl;
+	cout << matriz->getCols() << " " << matriz->getRows() << endl;
 
 
 	return 0;

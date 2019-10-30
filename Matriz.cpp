@@ -43,16 +43,16 @@ Matriz::Matriz(int linhas, int colunas, const double &valor) {
 
 }
 
-double ** Matriz::getMatriz() {
+double ** Matriz::getMatriz() const{
 	return matriz;
 }
 
-int Matriz::getRows() {
+int Matriz::getRows() const {
 	return this->linhas;
 
 }
 
-int Matriz::getCols() {
+int Matriz::getCols() const {
 	return this->colunas;
 }
 
@@ -100,8 +100,8 @@ Matriz Matriz::operator*(Matriz& m) {
 
 }
 
-double& Matriz::operator()(const int i, const int j) {
-	return this->getMatriz()[i + 1][j + 1];
+double& Matriz::operator()(const int i, const int j) const {
+	return this->getMatriz()[i - 1][j - 1];
 }
 
 std::ostream& operator<< (std::ostream& out, const Matriz& obj)
