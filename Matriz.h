@@ -7,6 +7,7 @@
 
 #ifndef POO_TP2_MATRIZ_H_
 #define POO_TP2_MATRIZ_H_
+#include <ostream>
 
 class Matriz {
 private:
@@ -27,6 +28,12 @@ public:
 
 	Matriz operator*(Matriz& m);
 	double& operator()(const int i, const int j) ;
+
+	//Write the member variables to stream objects
+	friend std::ostream& operator << (std::ostream& out, const Matriz& obj);
+
+	//Read data from stream object and fill it in member variables
+	friend std::istream& operator >> (std::istream& in, Matriz& obj);
 
 };
 

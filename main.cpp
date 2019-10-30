@@ -13,21 +13,9 @@
 using namespace std;
 
 int main(int argc, char **argv, char **envp) {
-	Matriz *matriz = new Matriz(2,2,2);
-
-
-	Matriz *matriz2 = new Matriz(2,2,7);
-
-	Matriz matriz3;
-	matriz3 = (*matriz) * (*matriz2);
-
-	for (int i = 0; i <= 1; i++) {
-		for (int j = 0; j <= 1; j++) {
-			std::cout << matriz3.getMatriz()[i][j] << " ";
-		}
-
-		std::cout << " " << endl;
-	}
+	Matriz *matriz = new Matriz(4,2,0);
+	cin >> *matriz;
+	cout << endl << *matriz;
 
 
 	return 0;

@@ -104,3 +104,22 @@ double& Matriz::operator()(const int i, const int j) {
 	return this->getMatriz()[i][j];
 }
 
+std::ostream& operator<< (std::ostream& out, const Matriz& obj)
+{
+	for(int i = 0; i < obj.linhas; i++){
+		for(int j = 0; j < obj.colunas; j++){
+			out << obj.matriz[i][j] << " ";
+		}
+		out << endl;
+	}
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Matriz& obj){
+	for(int i = 0; i < obj.linhas; i++){
+		for(int j = 0; j < obj.colunas; j++){
+			in >> obj.matriz[i][j];
+		}
+	}
+	return in;
+}
