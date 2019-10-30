@@ -14,19 +14,22 @@ using namespace std;
 
 int main(int argc, char **argv, char **envp) {
 	Matriz matriz = Matriz(2, 2, 7);
-	matriz.zeros();
 
+	(matriz)(0,0) = 10;
 
-	int linha = sizeof(matriz.getMatriz()) / sizeof(matriz.getMatriz()[0]);
-	int coluna = sizeof(matriz.getMatriz()[0]) / sizeof(matriz.getMatriz()[0][0]);
+	Matriz matriz2 = Matriz(2, 2, 2);
 
-	for (int i = 0; i <= linha; i++) {
-		for (int j = 0; j <= coluna; j++) {
-			std::cout << matriz.getMatriz()[i][j];
+	Matriz matriz3;
+	matriz3 = (matriz) * (matriz2);
+
+	for (int i = 0; i <= 1; i++) {
+		for (int j = 0; j <= 1; j++) {
+			std::cout << matriz3.getMatriz()[i][j] << " ";
 		}
 
 		std::cout << " " << endl;
 	}
+
 
 	return 0;
 }

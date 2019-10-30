@@ -39,12 +39,14 @@ double ** Matriz::getMatriz() {
 }
 
 int Matriz::getRows() {
-	return (sizeof(matriz) / sizeof(matriz[0])) + 1;
+	int rows = (int)((sizeof(matriz) / sizeof(matriz[0])) + 1);
+	return rows;
 
 }
 
 int Matriz::getCols() {
-	return (sizeof(matriz[0]) / sizeof(matriz[0][0])) + 1;
+	int cols = (int)((sizeof(matriz[0]) / sizeof(matriz[0][0])) + 1);
+	return cols;
 }
 
 void Matriz::zeros() {
@@ -53,5 +55,26 @@ void Matriz::zeros() {
 			matriz[i][j] = 0;
 		}
 	}
+}
+
+Matriz Matriz::operator*(Matriz& m) {
+
+	Matriz c = Matriz(this->getRows(), m.getCols(), 0);
+
+	for (int i = 0; i < this->getRows(); i++) {
+		for (int j = 0; j < m.getCols(); j++) {
+			c(i,j) = 0;
+			for (int k = 0; k < this->getCols(); k++) {
+				c(i,j) += this->getMatriz()[i][k] * m.getMatriz()[k][j];
+			}
+	    }
+	}
+
+	return c;
+}
+
+double& Matriz::operator()(int i, int j) {
+	return this->getMatriz()[i][j];
+
 }
 
