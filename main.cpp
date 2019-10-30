@@ -13,22 +13,21 @@
 using namespace std;
 
 int main(int argc, char **argv, char **envp) {
-	Matriz matriz = Matriz(2, 2, 7);
+	Matriz *matriz = new Matriz(4,2,2);
 
-	(matriz)(0,0) = 10;
 
-	Matriz matriz2 = Matriz(2, 2, 2);
+	Matriz *matriz2 = new Matriz(2,3,3);
 
 	Matriz matriz3;
-	matriz3 = (matriz) * (matriz2);
+	matriz3 = (*matriz) * (*matriz2);
 
-	for (int i = 0; i <= 1; i++) {
-		for (int j = 0; j <= 1; j++) {
-			std::cout << matriz3.getMatriz()[i][j] << " ";
-		}
-
-		std::cout << " " << endl;
-	}
+//	for (int i = 0; i <= 1; i++) {
+//		for (int j = 0; j <= 1; j++) {
+//			std::cout << matriz3.getMatriz()[i][j] << " ";
+//		}
+//
+//		std::cout << " " << endl;
+//	}
 
 
 	return 0;

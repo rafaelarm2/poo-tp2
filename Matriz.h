@@ -10,6 +10,8 @@
 
 class Matriz {
 private:
+	int linhas;
+	int colunas;
 	double **matriz;
 
 public:
