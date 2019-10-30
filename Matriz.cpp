@@ -81,10 +81,10 @@ Matriz Matriz::operator*(Matriz& m) {
 			std::cout << " " << endl;
 		}
 
-	Matriz c = Matriz(m.getRows(),this->getCols(), 0);
-	if(this->getRows() == m.getCols()) {
-		for (int i = 0; i < m.getRows(); i++) {
-			for (int j = 0; j < this->getCols(); j++) {
+	Matriz c = Matriz(this->getRows(), m.getCols(), 0);
+	if(this->getCols() == m.getRows()) {
+		for (int i = 0; i < this->getRows(); i++) {
+			for (int j = 0; j < m.getCols(); j++) {
 				c(i,j) = 0;
 				for (int k = 0; k < this->getRows(); k++) {
 					c(i,j) += this->getMatriz()[i][k] * m.getMatriz()[k][j];
