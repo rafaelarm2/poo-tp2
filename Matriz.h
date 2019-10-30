@@ -17,7 +17,7 @@ private:
 
 public:
 	Matriz();
-	Matriz(int linhas, int colunas, const double &valor);
+	Matriz(int linhas, int colunas, const double &valor = 0);
 	virtual ~Matriz();
 	Matriz(const Matriz &m);
 

@@ -13,7 +13,9 @@
 using namespace std;
 
 int main(int argc, char **argv, char **envp) {
-	Matriz *matriz = new Matriz(4,2,0);
+	Matriz *matriz = new Matriz(4,2);
+	cout << *matriz;
+	cout << endl << "Digite o valor da matriz: ";
 	cin >> *matriz;
 	cout << endl << *matriz;
 
