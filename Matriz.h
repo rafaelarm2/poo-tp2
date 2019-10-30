@@ -22,6 +22,10 @@ public:
 	int getRows();
 	int getCols();
 	void zeros();
+
+	Matriz operator*(Matriz& m);
+	double& operator()(int i, int j);
+
 };
 
 #endif /* POO_TP2_MATRIZ_H_ */
