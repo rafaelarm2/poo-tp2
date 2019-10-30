@@ -101,7 +101,7 @@ Matriz Matriz::operator*(Matriz& m) {
 }
 
 double& Matriz::operator()(const int i, const int j) {
-	return this->getMatriz()[i][j];
+	return this->getMatriz()[i + 1][j + 1];
 }
 
 std::ostream& operator<< (std::ostream& out, const Matriz& obj)
