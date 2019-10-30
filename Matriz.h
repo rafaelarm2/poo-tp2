@@ -24,7 +24,7 @@ public:
 	void zeros();
 
 	Matriz operator*(Matriz& m);
-	double& operator()(int i, int j);
+	double& operator()(const int i, const int j) ;
 
 };
 

@@ -73,7 +73,7 @@ Matriz Matriz::operator*(Matriz& m) {
 	return c;
 }
 
-double& Matriz::operator()(int i, int j) {
+double& Matriz::operator()(const int i, const int j) {
 	return this->getMatriz()[i][j];
 
 }
