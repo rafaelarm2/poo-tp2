@@ -29,6 +29,8 @@ public:
 	Matriz operator*(Matriz& m);
 	double& operator()(const int i, const int j) const;
 
+	bool operator==(const Matriz& m) const;
+
 	//Write the member variables to stream objects
 	friend std::ostream& operator << (std::ostream& out, const Matriz& obj);
 
