@@ -6,6 +6,7 @@
  */
 
 #include "Matriz.h"
+#include "Erro.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -77,8 +78,9 @@ Matriz Matriz::operator*(Matriz& m) {
 			}
 		}
 	} else {
-
-		cout << "Nao e possivel multiplicar matrizes cujo numero de colunas da primeira e diferente do numero de linhas da segunda." << endl;
+		Erro e("Nao e possivel multiplicar matrizes que possuem linhas e colunas diferentes.");
+		cout << "" << endl;
+		throw e;
 	}
 
 	return c;
@@ -107,4 +109,76 @@ std::istream& operator>>(std::istream& in, Matriz& obj){
 		}
 	}
 	return in;
+}
+
+Matriz * Matriz::operator+=(const Matriz& m) {
+	if(m.getRows() == this->getRows() && m.getCols() == this->getCols()) {
+		for(int i = 0; i < m.linhas; i++){
+			for(int j = 0; j < m.colunas; j++){
+				this->matriz[i][j] += m.getMatriz()[i][j];
+			}
+		}
+	} else {
+		Erro e("Nao e possivel somar matrizes que possuem linhas e colunas diferentes.");
+		e.out();
+		throw e;
+	}
+
+	return this;
+}
+
+
+Matriz * Matriz::operator-=(const Matriz& m) {
+	if(m.getRows() == this->getRows() && m.getCols() == this->getCols()) {
+		for(int i = 0; i < m.linhas; i++){
+			for(int j = 0; j < m.colunas; j++){
+				this->matriz[i][j] -= m.getMatriz()[i][j];
+			}
+		}
+	} else {
+		Erro e("Nao e possivel subtrair matrizes que possuem linhas e colunas diferentes.");
+		cout << "" << endl;
+		throw e;
+	}
+	return this;
+}
+
+bool Matriz::operator==(const Matriz& m) const {
+	bool equal = true;
+	if (m.getRows() == this->getRows() && m.getCols() == this->getCols()) {
+		for (int i = 0; i < m.linhas; i++) {
+			for (int j = 0; j < m.colunas; j++) {
+				if (this->matriz[i][j] != m.getMatriz()[i][j]) {
+					equal = false;
+					return equal;
+				}
+			}
+		}
+	} else {
+		Erro e("Nao e possivel comparar matrizes que possuem linhas e colunas diferentes.");
+		cout << "" << endl;
+		throw e;
+	}
+
+	return equal;
+}
+
+bool Matriz::operator!=(const Matriz& m) const {
+	bool equal = false;
+	if (m.getRows() == this->getRows() && m.getCols() == this->getCols()) {
+		for (int i = 0; i < m.linhas; i++) {
+			for (int j = 0; j < m.colunas; j++) {
+				if (this->matriz[i][j] != m.getMatriz()[i][j]) {
+					equal = true;
+					return equal;
+				}
+			}
+		}
+	} else {
+		Erro e("Nao e possivel comparar matrizes que possuem linhas e colunas diferentes.");
+		cout << "" << endl;
+		throw e;
+	}
+
+	return equal;
 }
