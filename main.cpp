@@ -45,18 +45,18 @@ int main(int argc, char **argv, char **envp) {
 //		}
 //		cout << " " << endl;
 //	}
-/*
-    Matriz matrizlara(2,2,8);
-	Matriz matrizlara1(2,2,-2);
-	Matriz matrizlara2;
-	matrizlara2 = matrizlara - matrizlara1 + matrizlara1;
-	for (int i = 0; i < matrizlara2.getRows(); i++) {
-		for (int j = 0; j < matrizlara2.getCols(); j++) {
-			cout << matrizlara2.getMatriz()[i][j] << " ";
-		}
-		cout << " " << endl;
-	}
-*/
+
+//    Matriz matrizlara(2,2,8);
+//	Matriz matrizlara1(2,2,1);
+//	Matriz matrizlara2;
+//	matrizlara2 = matrizlara - matrizlara1 - matrizlara1;
+//	for (int i = 0; i < matrizlara2.getRows(); i++) {
+//		for (int j = 0; j < matrizlara2.getCols(); j++) {
+//			cout << matrizlara2.getMatriz()[i][j] << " ";
+//		}
+//		cout << " " << endl;
+//	}
+
 	return 0;
 
 }

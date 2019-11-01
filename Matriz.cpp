@@ -183,7 +183,7 @@ bool Matriz::operator!=(const Matriz& m) const {
 	return equal;
 }
 
-Matriz Matriz::operator+(Matriz& m){
+Matriz Matriz::operator+(const Matriz& m) const{
     Matriz aux = Matriz(m.getRows(), m.getCols(), 0);
     if ((this->getRows() == m.getRows())&&(this->getCols() == m.getCols())) {
         for (int i = 0; i < aux.getRows(); i++)
@@ -195,14 +195,14 @@ Matriz Matriz::operator+(Matriz& m){
         }
     }
     else {
-        Erro e("Nao e possivel somar matrizes de diferentes dimensoes");
+        Erro e("Nao e possivel somar matrizes de diferentes dimensoes.");
         cout << "" << endl;
         throw e;
     }
     return aux;
 }
 
-Matriz Matriz::operator-(Matriz& m){
+Matriz Matriz::operator-(const Matriz& m) const {
     Matriz aux = Matriz(m.getRows(), m.getCols(), 0);
     if ((this->getRows() == m.getRows())&&(this->getCols() == m.getCols())) {
         for (int i = 0; i < aux.getRows(); i++)
@@ -214,7 +214,7 @@ Matriz Matriz::operator-(Matriz& m){
         }
     }
     else {
-        Erro e("Nao e possivel subtrair matrizes de diferentes dimensoes");
+        Erro e("Nao e possivel subtrair matrizes de diferentes dimensoes.");
         cout << "" << endl;
         throw e;
     }

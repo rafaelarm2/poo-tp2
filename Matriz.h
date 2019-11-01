@@ -40,11 +40,8 @@ public:
 	bool operator==(const Matriz& m) const;
 	bool operator!=(const Matriz& m) const;
 
-    // soma duas matrizes
-    Matriz operator+(Matriz& m);
-
-    //subtrai duas matrizes
-    Matriz operator-(Matriz& m);
+    Matriz operator+(const Matriz& m) const;
+    Matriz operator-(const Matriz& m) const;
 
 };
 
