@@ -23,6 +23,12 @@ Matriz::~Matriz() {
 	// TODO Auto-generated destructor stub
 }
 
+Matriz::Matriz(const Matriz &m) {
+	this->linhas = m.getRows();
+	this->colunas = m.getCols();
+	this->matriz = m.getMatriz();
+}
+
 Matriz::Matriz(int linhas, int colunas, const double &valor) {
 	this->linhas = linhas;
 	this->colunas = colunas;
@@ -155,9 +161,7 @@ bool Matriz::operator==(const Matriz& m) const {
 			}
 		}
 	} else {
-		Erro e("Nao e possivel comparar matrizes que possuem linhas e colunas diferentes.");
-		cout << "" << endl;
-		throw e;
+		return false;
 	}
 
 	return equal;
@@ -175,9 +179,7 @@ bool Matriz::operator!=(const Matriz& m) const {
 			}
 		}
 	} else {
-		Erro e("Nao e possivel comparar matrizes que possuem linhas e colunas diferentes.");
-		cout << "" << endl;
-		throw e;
+		return true;
 	}
 
 	return equal;
@@ -219,4 +221,26 @@ Matriz Matriz::operator-(const Matriz& m) const {
         throw e;
     }
     return aux;
+}
+
+void Matriz::operator*=(const int constante){
+    for(int i=0; i<this->linhas; i++){
+        for(int j=0; j<this->colunas; j++){
+            (*this)(i+1,j+1) = this->getMatriz()[i][j]*constante;
+        }
+    }
+}
+
+
+Matriz Matriz::operator~(){
+    Matriz m(this->colunas,this->linhas, 0);
+
+    for(int i=0 ;i < linhas;i++){
+        for(int j=0 ;j < colunas;j++){
+              m(i+1,j+1) = this->getMatriz()[j][i];
+        }
+    }
+
+    return m;
+
 }

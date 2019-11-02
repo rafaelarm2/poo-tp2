@@ -43,6 +43,10 @@ public:
     Matriz operator+(const Matriz& m) const;
     Matriz operator-(const Matriz& m) const;
 
+    Matriz operator~();
+    void operator*=(const int constante);
+
+
 };
 
 #endif /* POO_TP2_MATRIZ_H_ */
